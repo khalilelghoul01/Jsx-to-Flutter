@@ -5,3 +5,4 @@ dist/
 .prettierrc
 package-lock.json
 v0.0.1.alpha
+test

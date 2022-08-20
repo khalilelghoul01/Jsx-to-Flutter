@@ -1,15 +1,19 @@
-const element = require('./classes/Text');
-const { componentToWidget } = require('./core/widget');
-const fs = require('fs');
-
-const configFile = './transpiler.config.json';
-const config = fs.existsSync(configFile) && require(configFile);
-const { folder, dist } = config;
-(config.folder && fs.existsSync(config.folder)) ||
-  fs.mkdirSync(config.folder, { recursive: true });
-(config.dist && fs.existsSync(config.dist)) || fs.mkdirSync(config.dist);
+const { componentToWidget } = require("./core/widget");
+const fs = require("fs");
+const args = process.argv.slice(2);
+if (args.length < 2) {
+  console.error("No file specified or distination file specified");
+  process.exit(1);
+}
+const jsx = fs.existsSync(
+  args[0].endsWith("/") ? args[0].slice(0, -2) : args[0]
+)
+  ? fs.readFileSync(args[0], "utf8")
+  : (console.error("File not found"), process.exit(1));
+const dist = args[1];
+(dist && fs.existsSync(dist)) || fs.mkdirSync(dist);
 
 componentToWidget(
-  fs.readFileSync((folder && folder + 'home.jsx') ?? 'src/home.jsx', 'utf-8'),
-  (dist && dist + 'home') ?? 'src/home'
+  jsx,
+  dist + "/" + args[0].replace(/^.*[\\\/]/, "").replace(".jsx", "")
 );

@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "Convert JSX to Flutter",
   "main": "index.js",
+  "bin": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon"
@@ -19,5 +20,9 @@
   "dependencies": {
     "jsx2json": "^1.0.1",
     "nodemon": "^2.0.19"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khalilelghoul01/Jsx-to-Flutter.git"
   }
 }
