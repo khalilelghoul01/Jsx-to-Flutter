@@ -3,7 +3,7 @@
   "version": "0.0.5",
   "description": "Convert JSX to Flutter",
   "main": "index.js",
-  "bin": "jsxToFlutter",
+  "bin": "bin/jsxToFlutter",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon"
