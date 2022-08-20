@@ -1,6 +1,6 @@
 {
   "name": "jsx-to-flutter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Convert JSX to Flutter",
   "main": "index.js",
   "bin": "jsxToFlutter",
