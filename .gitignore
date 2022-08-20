@@ -1,0 +1,7 @@
+node_modules
+dist
+node_modules/
+dist/
+.prettierrc
+package-lock.json
+v0.0.1.alpha
